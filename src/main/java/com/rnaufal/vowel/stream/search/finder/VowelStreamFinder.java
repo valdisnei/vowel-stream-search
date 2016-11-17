@@ -28,24 +28,18 @@ public class VowelStreamFinder {
         char previousChar = ' ';
         while (input.hasNext()) {
             char currentChar = input.getNext();
-            if (isVowel(currentChar)) {
-                if (vowelsByOccurrence.get(currentChar) == null) {
-                    vowelsByOccurrence.put(currentChar, true);
-                } else {
-                    vowelsByOccurrence.put(currentChar, false);
-                }
-            }
-            List<Character> characters = predecessors.get(currentChar);
-            if (characters == null) {
-                characters = new ArrayList<>();
-                predecessors.put(currentChar, characters);
-            }
-            if (previousChar != ' ') {
-                characters.add(previousChar);
-            }
+
+            registerOccurrenceIfVowel(vowelsByOccurrence, currentChar);
+            computePredecessor(predecessors, currentChar, previousChar);
+
             previousChar = currentChar;
         }
 
+        return searchVowel(vowelsByOccurrence, predecessors);
+    }
+
+    private static Character searchVowel(Map<Character, Boolean> vowelsByOccurrence,
+                                         Map<Character, List<Character>> predecessors) {
         for (Map.Entry<Character, Boolean> vowelOccurrence : vowelsByOccurrence.entrySet()) {
             if (!vowelOccurrence.getValue()) {
                 continue;
@@ -64,6 +58,30 @@ public class VowelStreamFinder {
             }
         }
         return NOT_FOUND;
+    }
+
+    private static void computePredecessor(Map<Character, List<Character>> predecessors,
+                                           char currentChar,
+                                           char previousChar) {
+        List<Character> characters = predecessors.get(currentChar);
+        if (characters == null) {
+            characters = new ArrayList<>();
+            predecessors.put(currentChar, characters);
+        }
+        if (previousChar != ' ') {
+            characters.add(previousChar);
+        }
+    }
+
+    private static void registerOccurrenceIfVowel(Map<Character, Boolean> vowelsByOccurrence,
+                                                  char currentChar) {
+        if (isVowel(currentChar)) {
+            if (vowelsByOccurrence.get(currentChar) == null) {
+                vowelsByOccurrence.put(currentChar, true);
+            } else {
+                vowelsByOccurrence.put(currentChar, false);
+            }
+        }
     }
 
     private static boolean isVowel(char c) {

@@ -31,6 +31,8 @@ public class VowelStreamFinderTest {
                 {new CharSequenceStream("teleferico"), 'i'},
                 {new CharSequenceStream("ttttttt"), ' '},
                 {new CharSequenceStream("telefone"), 'o'},
+                {new CharSequenceStream("casa"), ' '},
+                {new CharSequenceStream("acordar"), 'o'},
         });
     }
 
