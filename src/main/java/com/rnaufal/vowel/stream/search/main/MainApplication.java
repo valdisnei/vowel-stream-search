@@ -17,7 +17,7 @@ public class MainApplication {
         if (foundChar != VowelStreamFinder.NOT_FOUND) {
             System.out.println("Output: " + foundChar);
         } else {
-            System.out.println("Carecter nao localizado. Tente outra stream.");
+            System.out.println("Vogal nao localizada. Tente outra stream.");
         }
     }
 }

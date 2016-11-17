@@ -2,6 +2,7 @@ group 'com.rnaufal'
 version '1.0.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'application'
 
 sourceCompatibility = 1.8
 
@@ -10,5 +11,15 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+mainClassName = 'com.rnaufal.vowel.stream.search.main.MainApplication'
+
+run {
+    if (!project.hasProperty("appArgs") ) {
+        throw new InvalidUserDataException("Invocar comando da seguinte forma: ./gradlew build run -PappArgs={stream}. Substituir {stream} pela stream desejada.")
+    }
+    args appArgs
+}
+
