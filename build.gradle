@@ -17,9 +17,8 @@ dependencies {
 mainClassName = 'com.rnaufal.vowel.stream.search.main.MainApplication'
 
 run {
-    if (!project.hasProperty("appArgs") ) {
-        throw new InvalidUserDataException("Invocar comando da seguinte forma: ./gradlew build run -PappArgs={stream}. Substituir {stream} pela stream desejada.")
+    if (project.hasProperty("appArgs") ) {
+        args appArgs
     }
-    args appArgs
 }
 

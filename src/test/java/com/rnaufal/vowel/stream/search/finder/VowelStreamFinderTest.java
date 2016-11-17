@@ -47,7 +47,7 @@ public class VowelStreamFinderTest {
     }
 
     @Test
-    public void shouldFindVowelOnStream() {
+    public void tryToFindVowelOnStream() {
         char actual = VowelStreamFinder.firstChar(input);
         assertThat(actual, is(equalTo(expected)));
     }
