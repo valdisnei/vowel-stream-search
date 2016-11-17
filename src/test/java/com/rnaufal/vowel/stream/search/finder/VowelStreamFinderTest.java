@@ -33,6 +33,7 @@ public class VowelStreamFinderTest {
                 {new CharSequenceStream("telefone"), 'o'},
                 {new CharSequenceStream("casa"), ' '},
                 {new CharSequenceStream("acordar"), 'o'},
+                {new CharSequenceStream(" "), ' '},
         });
     }
 
