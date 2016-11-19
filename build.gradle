@@ -16,6 +16,8 @@ dependencies {
 
 mainClassName = 'com.rnaufal.vowel.stream.search.main.MainApplication'
 
+run.dependsOn check
+
 run {
     if (project.hasProperty("appArgs") ) {
         args appArgs
