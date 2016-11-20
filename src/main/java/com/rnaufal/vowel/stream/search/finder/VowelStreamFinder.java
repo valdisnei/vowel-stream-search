@@ -15,6 +15,8 @@ public class VowelStreamFinder {
 
     private static final String SPECIAL_CHARACTER_REGEX = "[^\\w]";
 
+    private static final String DIGIT_REGEX = "\\d";
+
     private VowelStreamFinder() {
 
     }
@@ -48,7 +50,7 @@ public class VowelStreamFinder {
             }
 
             for (Character vowelPredecessor : predecessors.get(vowelOccurrence.getKey())) {
-                if (isVowel(vowelPredecessor) || isSpecialCharcater(vowelPredecessor)) {
+                if (!isConsonant(vowelPredecessor)) {
                     continue;
                 }
 
@@ -77,20 +79,36 @@ public class VowelStreamFinder {
 
     private static void registerOccurrenceIfVowel(Map<Character, Boolean> vowelsByOccurrence,
                                                   char currentChar) {
-        if (isVowel(currentChar)) {
-            if (vowelsByOccurrence.get(currentChar) == null) {
-                vowelsByOccurrence.put(currentChar, true);
-            } else {
-                vowelsByOccurrence.put(currentChar, false);
-            }
+        if (!isVowel(currentChar)) {
+            return;
+        }
+        if (vowelsByOccurrence.get(currentChar) == null) {
+            vowelsByOccurrence.put(currentChar, true);
+        } else {
+            vowelsByOccurrence.put(currentChar, false);
         }
     }
 
     private static boolean isVowel(char character) {
-        return String.valueOf(character).matches(VOWELS_REGEX);
+        return isVowel(String.valueOf(character));
     }
 
-    private static boolean isSpecialCharcater(char character) {
-        return String.valueOf(character).matches(SPECIAL_CHARACTER_REGEX);
+    private static boolean isConsonant(char vowelPredecessor) {
+        String character = String.valueOf(vowelPredecessor);
+        return !isVowel(character) &&
+                !isSpecialCharacter(character) &&
+                !isDigit(character);
+    }
+
+    private static boolean isVowel(String character) {
+        return character.matches(VOWELS_REGEX);
+    }
+
+    private static boolean isDigit(String character) {
+        return character.matches(DIGIT_REGEX);
+    }
+
+    private static boolean isSpecialCharacter(String character) {
+        return character.matches(SPECIAL_CHARACTER_REGEX);
     }
 }

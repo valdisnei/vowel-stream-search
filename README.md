@@ -81,7 +81,7 @@ dos antecessores, o último caracter processado da *Stream* é guardado.
     a. Para cada vogal da estrutura de marcação de repetição de vogais
         a.1. Se o vogal corrente se repetir na Stream, retorna-se ao passo a
         a.2. Para cada antecessor da vogal corrente na Stream
-            a.2.1 Se for uma vogal ou caracter especial, retorna-se ao passo a.2
+            a.2.1 Se for uma vogal, dígito ou caracter especial, retorna-se ao passo a.2
             a.2.2 Sendo então uma consoante, para cada antecessor da consoante corrente na Stream
                 a.2.2.1 Se for um caracter vogal, esse é retornado como resultado da busca 
                 a.2.2.2 Caso não o seja, retorna-se o passo a.2.2
