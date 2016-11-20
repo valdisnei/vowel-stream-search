@@ -72,7 +72,15 @@ A estratégia utilizada para a resolução do problema foi a seguinte:
 dos antecessores, o último caracter processado da *Stream* é guardado.
 
 3. Ao final do preenchimento das estruturas, inicia-se a tentativa de busca do caracter Vogal:
+
 ⋅⋅1. Para cada vogal da estrutura de marcação de repetição de vogais
+
+1. First ordered list item
+2. Another item
+⋅⋅* Unordered sub-list. 
+1. Actual numbers don't matter, just that it's a number
+⋅⋅1. Ordered sub-list
+4. And another item.
 
 ## Entradas e saídas
 
