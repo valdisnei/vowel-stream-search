@@ -89,6 +89,8 @@ dos antecessores, o último caracter processado da *Stream* é guardado.
 * Ao final do processo, o caracter vogal encontrado ou um caracter vazio (indicando que o vogal não foi encontrado)
 é retornado como resultado da busca.
 
+O sistema mostra no *console* a mensagem *Output: {vogal}* ou uma mensagem informando que o caracter não foi localizado.
+
 ## Entradas e saídas
 
 Exemplo (em sistemas Unix):
