@@ -31,8 +31,8 @@ O sistema deve ser executado na raiz do projeto vowel-stream-search com o seguin
 
 Esse comando realiza as seguintes tarefas: 
 
-- *build* do sistema, execução dos testes unitários;
-- Execução da classe principal *MainApplication* passe todos os testes unitários forem executados com sucesso;
+* *build* do sistema, execução dos testes unitários;
+* Execução da classe principal *MainApplication* passe todos os testes unitários forem executados com sucesso;
 
 O parâmetro **{stream}** deve ser substituído pela stream que se deseja buscar o caracter vogal.
 
@@ -60,27 +60,29 @@ A classe *CharSequenceStream* representa uma implementação da interface *Strea
 
 A estratégia utilizada para a resolução do problema foi a seguinte:
 
-1. Duas estruturas foram criadas:
+* Duas estruturas foram criadas:
 
-    - Um *LinkedHashMap* que armazena uma marcação se uma vogal ocorreu mais de uma vez na stream. Foi utilizado um 
+    * Um *LinkedHashMap* que armazena uma marcação se uma vogal ocorreu mais de uma vez na stream. Foi utilizado um 
         *LinkedHashMap* pois a varredura dessa estrutura deve ocorrer na ordem em que os caracteres vogais
         aparecem na *Stream*.
    
-    - Um *HashMap* que armazena a lista de antecessores na stream para cada caracter.
+    * Um *HashMap* que armazena a lista de antecessores na stream para cada caracter.
    
-2. Ao percorrer a *Stream*, as duas estruturas acima são preenchidas. Para preencher a estrutura
+* Ao percorrer a *Stream*, as duas estruturas acima são preenchidas. Para preencher a estrutura
 dos antecessores, o último caracter processado da *Stream* é guardado.
 
-3. Ao final do preenchimento das estruturas, inicia-se a tentativa de busca do caracter Vogal:
-
-⋅⋅1. Para cada vogal da estrutura de marcação de repetição de vogais
-
-1. First ordered list item
-2. Another item
-⋅⋅* Unordered sub-list. 
-1. Actual numbers don't matter, just that it's a number
-⋅⋅1. Ordered sub-list
-4. And another item.
+* Ao final do preenchimento das estruturas, inicia-se a tentativa de busca do caracter Vogal:
+```
+    a. Para cada vogal da estrutura de marcação de repetição de vogais
+        a.1. Se o vogal corrente se repetir na Stream, retorna-se ao passo a
+        a.2. Para cada antecessor da vogal corrente na Stream
+            a.2.1 Se for uma vogal ou caracter especial, retorna-se ao passo a.2
+            a.2.2 Sendo então uma consoante, para cada antecessor da consoante corrente na Stream
+                a.2.2.1 Se for um caracter vogal, esse é retornado como resultado da busca 
+                a.2.2.2 Caso não o seja, retorna-se o passo a.2.2
+```             
+* Ao final do processo, o caracter vogal encontrado ou um caracter vazio (indicando que o vogal não foi encontrado)
+é retornado como resultado da busca.
 
 ## Entradas e saídas
 
