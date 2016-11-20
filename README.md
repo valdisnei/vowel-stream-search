@@ -77,15 +77,15 @@ A estratégia utilizada para a resolução do problema foi a seguinte:
 dos antecessores, o último caracter processado da *Stream* é guardado.
 
 * Ao final do preenchimento das estruturas, inicia-se a tentativa de busca do caracter Vogal:
-```
+<pre>
     a. Para cada vogal do mapa que marca a repetição de vogais
-        a.1. Se o vogal corrente se repetir na Stream, retorna-se ao passo a.
+        a.1. Se o vogal corrente se repetir na Stream, retorna-se ao passo <i>a.</i>
         a.2. Para cada antecessor da vogal corrente na Stream
-            a.2.1 Se for um vogal, dígito ou caracter especial, retorna-se ao passo a.2
+            a.2.1 Se for um vogal, dígito ou caracter especial, retorna-se ao passo <i>a.2</i>
             a.2.2 Sendo então uma consoante, para cada antecessor da consoante corrente na Stream
-                a.2.2.1 Se for um caracter vogal, então o vogal corrente do passo a. é retornado; 
-                a.2.2.2 Caso não o seja, retorna-se o passo a.2.2
-```             
+                a.2.2.1 Se for um caracter vogal, então o vogal corrente do passo <i>a.</i> é retornado; 
+                a.2.2.2 Caso não o seja, retorna-se o passo <i>a.2.2</i>
+</pre>            
 * Ao final do processo, o caracter vogal encontrado ou um caracter vazio (indicando que o vogal não foi encontrado)
 é retornado como resultado da busca.
 
