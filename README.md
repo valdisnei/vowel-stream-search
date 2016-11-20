@@ -72,21 +72,19 @@ A estratégia utilizada para a resolução do problema foi a seguinte:
 dos antecessores, o último caracter processado da *Stream* é guardado.
 
 3. Ao final do preenchimento das estruturas, inicia-se a tentativa de busca do caracter Vogal:
-```
     a. Para cada vogal da estrutura de marcação de repetição de vogais
   
-        a.1. Se o vogal corrente se repetir na *Stream*, retorna-se ao passo a
+        a.1. Se o vogal corrente se repetir na *`Stream`*, retorna-se ao passo a
     
-        a.2. Para cada antecessor da vogal corrente na *Stream*
+        a.2. Para cada antecessor da vogal corrente na *`Stream`*
     
             a.2.1 Se for uma vogal ou caracter especial, retorna-se ao passo a.2
         
-            a.2.2 Sendo então uma consoante, para cada antecessor da consoante corrente na *Stream*
+            a.2.2 Sendo então uma consoante, para cada antecessor da consoante corrente na *`Stream`*
         
                 a.2.2.1 Se for um caracter vogal, esse é retornado como resultado da busca 
             
                 a.2.2.2 Caso não o seja, retorna-se o passo a.2.2
-```
 
 4. Ao final do processo, o caracter vogal encontrado ou um caracter vazio (indicando que o vogal não foi encontrado)
 é retornado como resultado da busca.
@@ -95,15 +93,18 @@ dos antecessores, o último caracter processado da *Stream* é guardado.
 
 Exemplo (em sistemas Unix):
 
-cd /{PATH_DO_PROJETO}/vowel-stream-search
+cd /*{PATH_DO_PROJETO}*/vowel-stream-search
 
 **./gradlew run -PappArgs=aAbBABacafe**
+
 **Output:** e
 
 **./gradlew run -PappArgs=casa**
+
 **Output:** Caracter vogal nao localizado. Por favor, tente outra stream.
 
 **./gradlew run**
+
 **Output:** Executar o sistema da seguinte forma: ./gradlew run -PappArgs={stream}. Substituir {stream} pela stream desejada.
 
 ## Cenários não implementados
