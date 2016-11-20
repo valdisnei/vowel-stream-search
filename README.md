@@ -59,7 +59,7 @@ Não será possível reiniciar o fluxo da leitura da stream.
 O sistema possui os seguintes diretórios de código fonte:
 
 * *src/main/java*: Encontram-se as classes do sistema;
-* *src/test/java*: Encontram-se as classes de teste do sistema;
+* *src/test/java*: Encontram-se os testes unitários do sistema;
 
 A classe *CharSequenceStream* representa uma implementação da interface *Stream* de String.
 
