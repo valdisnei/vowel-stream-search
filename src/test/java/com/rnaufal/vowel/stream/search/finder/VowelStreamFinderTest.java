@@ -34,6 +34,9 @@ public class VowelStreamFinderTest {
                 {new CharSequenceStream("casa"), ' '},
                 {new CharSequenceStream("acordar"), 'o'},
                 {new CharSequenceStream(" "), ' '},
+                {new CharSequenceStream("afe"), 'e'},
+                {new CharSequenceStream("b"), ' '},
+                {new CharSequenceStream("a"), ' '},
         });
     }
 
