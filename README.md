@@ -74,7 +74,7 @@ dos antecessores, o último caracter processado da *Stream* é guardado.
 3. Ao final do preenchimento das estruturas, inicia-se a tentativa de busca do caracter Vogal:
     a. Para cada vogal da estrutura de marcação de repetição de vogais
   
-        a.1. Se o vogal corrente se repetir na *`Stream`*, retorna-se ao passo a
+        a.1. Se o vogal corrente se repetir na > *`Stream`*, retorna-se ao passo a
     
         a.2. Para cada antecessor da vogal corrente na *`Stream`*
     
