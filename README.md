@@ -79,7 +79,7 @@ dos antecessores, o último caracter processado da *Stream* é guardado.
 * Ao final do preenchimento das estruturas, inicia-se a tentativa de busca do caracter Vogal:
 ```
     a. Para cada vogal do mapa que marca a repetição de vogais
-        a.1. Se o vogal corrente se repetir na Stream, retorna-se ao passo a
+        a.1. Se o vogal corrente se repetir na Stream, retorna-se ao passo a.
         a.2. Para cada antecessor da vogal corrente na Stream
             a.2.1 Se for um vogal, dígito ou caracter especial, retorna-se ao passo a.2
             a.2.2 Sendo então uma consoante, para cada antecessor da consoante corrente na Stream
