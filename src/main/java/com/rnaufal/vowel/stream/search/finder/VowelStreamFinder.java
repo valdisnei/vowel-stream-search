@@ -11,7 +11,9 @@ public class VowelStreamFinder {
 
     public static final char NOT_FOUND = ' ';
 
-    private static final String VOWELS = "AEIOUaeiou";
+    private static final String VOWELS_REGEX = "(?i)[aeiou]";
+
+    private static final String SPECIAL_CHARACTER_REGEX = "[^\\w]";
 
     private VowelStreamFinder() {
 
@@ -46,7 +48,7 @@ public class VowelStreamFinder {
             }
 
             for (Character vowelPredecessor : predecessors.get(vowelOccurrence.getKey())) {
-                if (isVowel(vowelPredecessor)) {
+                if (isVowel(vowelPredecessor) || isSpecialCharcater(vowelPredecessor)) {
                     continue;
                 }
 
@@ -84,7 +86,11 @@ public class VowelStreamFinder {
         }
     }
 
-    private static boolean isVowel(char c) {
-        return VOWELS.indexOf(c) != -1;
+    private static boolean isVowel(char character) {
+        return String.valueOf(character).matches(VOWELS_REGEX);
+    }
+
+    private static boolean isSpecialCharcater(char character) {
+        return String.valueOf(character).matches(SPECIAL_CHARACTER_REGEX);
     }
 }

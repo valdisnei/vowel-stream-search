@@ -11,7 +11,7 @@ public class CharSequenceStream implements Stream {
 
     private final char[] chars;
 
-    private int current;
+    private int currentIndex;
 
     public CharSequenceStream(String source) {
         if (source == null) {
@@ -25,11 +25,11 @@ public class CharSequenceStream implements Stream {
         if (!hasNext()) {
             throw new InvalidStreamStateException();
         }
-        return chars[current++];
+        return chars[currentIndex++];
     }
 
     public boolean hasNext() {
-        return current < chars.length;
+        return currentIndex < chars.length;
     }
 
     @Override
