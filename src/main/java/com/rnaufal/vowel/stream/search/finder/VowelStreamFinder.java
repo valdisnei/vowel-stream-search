@@ -11,7 +11,7 @@ public class VowelStreamFinder {
 
     public static final char NOT_FOUND = ' ';
 
-    private static final String VOWELS_REGEX = "(?i)[aeiou]";
+    private static final String VOWELS_REGEX = "(?i)[aáàãâÁÀÃÂeéêÉÊiíÍoóõôÓÕÔuúÚ]";
 
     private static final String SPECIAL_CHARACTER_REGEX = "[^\\w]";
 

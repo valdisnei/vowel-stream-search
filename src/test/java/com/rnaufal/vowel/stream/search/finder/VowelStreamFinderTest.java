@@ -40,7 +40,12 @@ public class VowelStreamFinderTest {
                 {new CharSequenceStream("c--a--f--e"), ' '},
                 {new CharSequenceStream("a[f--__e"), ' '},
                 {new CharSequenceStream("---[]afe"), 'e'},
-                {new CharSequenceStream("1ao5ife"), 'e'}
+                {new CharSequenceStream("óleo"), 'e'},
+                {new CharSequenceStream("água"), 'u'},
+                {new CharSequenceStream("ÁgUA"), 'U'},
+                {new CharSequenceStream("âmago"), 'a'},
+                {new CharSequenceStream("ômega"), 'e'},
+                {new CharSequenceStream("você"), 'ê'}
         });
     }
 

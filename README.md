@@ -108,7 +108,3 @@ cd /*{PATH_DO_PROJETO}*/vowel-stream-search
 **./gradlew run**
 
 **Output:** Executar o sistema da seguinte forma: ./gradlew run -PappArgs={stream}. Substituir {stream} pela stream desejada.
-
-## Cenários não implementados
-
-Suporte a *Streams* acentuadas.
